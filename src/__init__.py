@@ -57,6 +57,8 @@ class NearTotalRecallSkill(OVOSSkill):
 
         self.load_databanks()
 
+        self.add_event("near.total.recall", self.handle_do_you_recall_intent)
+
         self.log.info("Done with Initialize")
 
     def on_settings_changed(self):
