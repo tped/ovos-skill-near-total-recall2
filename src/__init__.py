@@ -55,23 +55,14 @@ class NearTotalRecallSkill(OVOSSkill):
         # set a callback to be called when settings are changed
         self.settings_change_callback = self.on_settings_changed
 
-        self.load_databanks()
-
-        self.add_event("near.total.recall", self.handle_do_you_recall_intent)
+        # self.load_databanks()
+        self.enabled = False
 
         self.log.info("Done with Initialize")
 
     def on_settings_changed(self):
         """This method is called when the skill settings are changed."""
         self.log.info("Settings changed!")
-
-    @property
-    def log_level(self):
-        """Dynamically get the 'log_level' value from the skill settings file.
-        If it doesn't exist, return the default value.
-        This will reflect live changes to settings.json files (local or from backend)
-        """
-        return self.settings.get("log_level", "INFO")
 
     def load_databanks(self):
         self.log.info("Initializing Near-Total-Recall Memory Banks")
@@ -198,7 +189,7 @@ class NearTotalRecallSkill(OVOSSkill):
             self.log.error("Original data not loaded.")
             return None
 
-        # Assuming memory_id corresponds to the 'Timestamp' or another unique field
+        # Given memory_id corresponds to the 'Timestamp' or another unique field
         # Find the memory dictionary with the matching timestamp
         memory_row = [m for m in self.memory_data if m['Timestamp'] == memory_id]
 
