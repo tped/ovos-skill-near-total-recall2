@@ -3,11 +3,11 @@ from ovos_utils.process_utils import RuntimeRequirements
 from ovos_workshop.decorators import intent_handler
 from ovos_workshop.skills import OVOSSkill
 
-import os
-import json
-from datetime import datetime
-import numpy as np
-from sentence_transformers import SentenceTransformer
+# import os
+# import json
+# from datetime import datetime
+# import numpy as np
+# from sentence_transformers import SentenceTransformer
 
 # NTR data and tuning parameters in <NTR_Skill>/settings.json
 DEFAULT_SETTINGS = {
@@ -56,7 +56,6 @@ class NearTotalRecallSkill(OVOSSkill):
         self.settings_change_callback = self.on_settings_changed
 
         # self.load_databanks()
-        self.enabled = False
 
         self.log.info("Done with Initialize")
 
@@ -64,6 +63,7 @@ class NearTotalRecallSkill(OVOSSkill):
         """This method is called when the skill settings are changed."""
         self.log.info("Settings changed!")
 
+    ''' Temp Remove
     def load_databanks(self):
         self.log.info("Initializing Near-Total-Recall Memory Banks")
         # self.log.info(f"Skill ID: {self.skill_id}")
@@ -273,6 +273,14 @@ class NearTotalRecallSkill(OVOSSkill):
                 return False  # quietly pass on this one Fallback Friendly
             else:
                 self.speak_dialog("no_memory_found")
+    '''
+
+    @intent_handler("DoYouRecall.intent")
+    def handle_do_you_recall_intent(self, message):
+        self.speak("Near Total Recall Test - here's the message")
+        self.speak(message)
+        self.speak_dialog("no_memory_found")
+        return
 
     def stop(self):
         """Optional action to take when "stop" is requested by the user.
