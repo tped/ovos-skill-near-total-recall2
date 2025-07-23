@@ -56,7 +56,7 @@ class NearTotalRecallSkill(OVOSSkill):
         self.settings_change_callback = self.on_settings_changed
 
         # self.load_databanks()
-
+        self.speak("Near Total Recall Stub is up and ready!")
         self.log.info("Done with Initialize")
 
     def on_settings_changed(self):
