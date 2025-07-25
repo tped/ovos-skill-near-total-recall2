@@ -3,11 +3,13 @@
     "url": "https://github.com/tped/ovos-skill-near-total-recall2",
     "summary": "",
     "short_description": null,
-    "description": "Information about your skill",
+    "description": "Simply a Stub of NTR, will add code little by little to see what bothers OVOS. May end up with cleaner/better NTR - the sequel!",
     "examples": [
-        "Hello world",
-        "How are you?",
-        "Thank you"
+        "Tell me about {query}",
+        "What do you remember about {query}",
+        "What do you recall about {query}",
+        "Do you recall {query}",
+        "Do you remember {query}"
     ],
     "desktopFile": false,
     "warning": "",
@@ -43,11 +45,12 @@
         "ovos skill"
     ],
     "credits": [
-        "authorName",
-        "(@githubUsername)"
+        "TPed",
+        "(@tped)"
     ],
     "skillname": "ovos-skill-near-total-recall2",
     "authorname": "tped",
     "foldername": null,
-    "ovosskill": "Introductory Skill so that Skill Authors can see how an OVOS Skill is put together"
+    "ovosskill": "OVOS Near Total Recall (NTR) - possibly 'II'. Attempting to debug chronic issue with NTR on latest OVOS ... intents do not get registered",
+    "intents": "DoYouRecall - Tell me about {query} - What do you remember about {query} - What do you recall about {query} - Do you recall {query} - Do you remember {query}"
 }
