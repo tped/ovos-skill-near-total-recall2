@@ -31,7 +31,7 @@ class NearTotalRecallSkill(OVOSSkill):
         other base class settings are only available after the call to super().
         """
         super().__init__(*args, **kwargs)
-        self.override = True
+        self.learning = True
         self.is_reciting = False
 
     @classproperty
@@ -53,7 +53,7 @@ class NearTotalRecallSkill(OVOSSkill):
         # self.settings is a jsondb, which extends the dict class and adds helpers like merge
         self.settings.merge(DEFAULT_SETTINGS, new_only=True)
         # set a callback to be called when settings are changed
-        self.settings_change_callback = self.on_settings_changed
+        # self.settings_change_callback = self.on_settings_changed
 
         # self.load_databanks()
         self.speak("Near Total Recall Stub is up and ready!")
