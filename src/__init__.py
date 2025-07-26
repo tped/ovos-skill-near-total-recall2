@@ -76,6 +76,7 @@ class NearTotalRecallSkill(OVOSSkill):
         self.speak(message)
         self.speak_dialog("I remember a lot of stuff")
         return
+
     def stop(self):
         """Optional action to take when "stop" is requested by the user.
         This method should return True if it stopped something or
