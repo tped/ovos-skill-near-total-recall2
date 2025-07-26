@@ -57,7 +57,7 @@ class NearTotalRecallSkill(OVOSSkill):
 
         # self.load_databanks()
         self.speak("Near Total Recall Stub is up and ready!")
-        self.log.info("Done with Initialize - #4")
+        self.log.info("Done with Initialize - #5")
 
     def on_settings_changed(self):
         """This method is called when the skill settings are changed."""
@@ -66,15 +66,13 @@ class NearTotalRecallSkill(OVOSSkill):
     @intent_handler("DoYouRecall.intent")
     def handle_do_you_recall_intent(self, message):
         self.speak("Near Total Recall Test - here's the message")
-        self.speak(message)
         self.speak_dialog("I should recall a memory but I'm a stub")
         return
 
     @intent_handler("MemoryChecker.intent")
     def handle_memory_checker_intent(self, message):
         self.speak("Near Total Recall Memory Checker Test - here's the message")
-        self.speak(message)
-        self.speak_dialog("I remember a lot of stuff")
+        self.speak_dialog("I can't remember anything")
         return
 
     def stop(self):
