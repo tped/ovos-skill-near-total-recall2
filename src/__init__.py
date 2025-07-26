@@ -57,7 +57,7 @@ class NearTotalRecallSkill(OVOSSkill):
 
         # self.load_databanks()
         self.speak("Near Total Recall Stub is up and ready!")
-        self.log.info("Done with Initialize")
+        self.log.info("Done with Initialize - #2")
 
     def on_settings_changed(self):
         """This method is called when the skill settings are changed."""
